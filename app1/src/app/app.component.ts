@@ -20,4 +20,11 @@ export class AppComponent {
   decrementar() {
     this.contador--;
   }
+
+  masEdad(){
+    this.edad++;
+  }
+  menosEdad(){
+    this.edad--;
+  }
 }
