@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app1';
 
-  nombre = '';
-  apellido='';
+  nombre = 'Mario';
+  apellido='Luján';
   edad = 26;
   sueldos = [1500, 2500, 6000];
 
@@ -21,10 +21,7 @@ export class AppComponent {
     this.contador--;
   }
 
-  masEdad(){
-    this.edad++;
-  }
-  menosEdad(){
-    this.edad--;
+  cambiarEdad(cantidad: number): void {
+    this.edad += cantidad;
   }
 }

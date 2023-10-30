@@ -5,7 +5,12 @@
 <div>
   <p>Nombre del Empleado: {{nombre}} {{apellido}}</p>
   <p>Edad: {{edad}}</p>  
-  <p *ngIf="edad>=18">Es mayor de edad.</p>
+
+  <p *ngIf="edad >= 18; else menorDeEdad">Es mayor de edad.</p>
+  <ng-template #menorDeEdad>
+    <p>Es menor de edad.</p>
+  </ng-template>
+
   <table>
     <tr>
       <td>Sueldos</td>
@@ -18,8 +23,8 @@
 
 <div>
   <p>{{contador}}</p>
-  <button (click)="incrementar()">++</button>
   <button (click)="decrementar()">--</button>
+  <button (click)="incrementar()">++</button>
 </div>
 
 <div>
@@ -29,6 +34,6 @@
 </div>
 
 <div>
-  <button (click)="masEdad()">+ Edad</button>
-  <button (click)="menosEdad()">- Edad</button>
+  <button (click)="cambiarEdad(-1)">- Edad</button>
+  <button (click)="cambiarEdad(1)">+ Edad</button>
 </div>
